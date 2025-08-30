@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Wats Programming Language</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="background-blobs">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="blob blob3"></div>
+        </div>
+
+        <div class="page-container">
+            <header>
+                <nav>
+                    <div class="logo">Wats</div>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li>
+                            <a
+                                href="https://github.com/abhilekhgautam/wats"
+                                target="_blank"
+                                >GitHub</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <!-- === NEW COMBINED HERO AND EDITOR SECTION === -->
+                <section class="hero">
+                    <div class="hero-container">
+                        <div class="hero-content">
+                            <h1>
+                                Compile with
+                                <span class="gradient-text">Wats</span>
+                            </h1>
+                            <p>
+                                An educational language that compiles to BRIL.
+                                Designed for clarity, simplicity, and learning
+                                the fundamentals of compiler design.
+                            </p>
+                            <button id="playground-btn" class="cta-button">
+                                <span>Try in Wats Playground</span>
+                            </button>
+                        </div>
+
+                        <div
+                            id="code-editor-wrapper"
+                            class="code-editor-wrapper"
+                        >
+                            <div class="editor-header">
+                                <div class="editor-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="editor-title">main.wats</div>
+                            </div>
+                            <div class="editor-body">
+                                <pre><code id="animated-code"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="features" class="features-section">
+                    <h2 class="section-title reveal">Core Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card reveal">
+                            <h3>Simplified Syntax</h3>
+                            <p>
+                                Focus on compiler logic, not complex grammar.
+                                The syntax is minimal and intuitive, perfect for
+                                beginners.
+                            </p>
+                        </div>
+                        <div class="feature-card reveal anim-delay-1">
+                            <h3>Direct to BRIL IR</h3>
+                            <p>
+                                Compile directly to the
+                                <a href="https://github.com/sampsyo/bril"
+                                    >BRIL</a
+                                >
+                                for Intermediate Languages, a standard in
+                                compiler education.
+                            </p>
+                        </div>
+                        <div class="feature-card reveal anim-delay-2">
+                            <h3>Interactive Learning</h3>
+                            <p>
+                                Use the online playground to get instant
+                                feedback and see the compiled BRIL output in
+                                real-time.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>Work on progress!</p>
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
