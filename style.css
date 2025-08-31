@@ -437,6 +437,10 @@ footer {
     .why-wats-container {
         grid-template-columns: 1fr;
     }
+
+    #code-editor-wrapper {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
