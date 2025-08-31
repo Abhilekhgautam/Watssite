@@ -23,6 +23,7 @@
                     <div class="logo">Wats</div>
                     <ul>
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#why-wats">Why Wats?</a></li>
                         <li>
                             <a
                                 href="https://github.com/abhilekhgautam/wats"
@@ -35,18 +36,23 @@
             </header>
 
             <main>
-                <!-- === NEW COMBINED HERO AND EDITOR SECTION === -->
                 <section class="hero">
                     <div class="hero-container">
                         <div class="hero-content">
                             <h1>
-                                Compile with
+                                The
                                 <span class="gradient-text">Wats</span>
+                                Programming Language
                             </h1>
                             <p>
-                                An educational language that compiles to BRIL.
-                                Designed for clarity, simplicity, and learning
-                                the fundamentals of compiler design.
+                                An educational language that compiles to
+                                <a
+                                    class="gradient-text"
+                                    href="https://capra.cs.cornell.edu/bril/"
+                                    >Bril</a
+                                >. Designed for clarity, simplicity, and
+                                learning the fundamentals of compiler
+                                optimization.
                             </p>
                             <button id="playground-btn" class="cta-button">
                                 <span>Try in Wats Playground</span>
@@ -76,38 +82,78 @@
                     <h2 class="section-title reveal">Core Features</h2>
                     <div class="features-grid">
                         <div class="feature-card reveal">
-                            <h3>Simplified Syntax</h3>
+                            <h3>Beautiful Error Reporting</h3>
                             <p>
-                                Focus on compiler logic, not complex grammar.
-                                The syntax is minimal and intuitive, perfect for
-                                beginners.
+                                Error messages you'd love to see in your program
+                                :).
                             </p>
                         </div>
                         <div class="feature-card reveal anim-delay-1">
-                            <h3>Direct to BRIL IR</h3>
+                            <h3>Direct to Bril</h3>
                             <p>
-                                Compile directly to the
-                                <a href="https://github.com/sampsyo/bril"
-                                    >BRIL</a
-                                >
-                                for Intermediate Languages, a standard in
-                                compiler education.
+                                Compile directly to Bril for Intermediate
+                                Languages, a standard in compiler education.
                             </p>
                         </div>
                         <div class="feature-card reveal anim-delay-2">
                             <h3>Interactive Learning</h3>
                             <p>
                                 Use the online playground to get instant
-                                feedback and see the compiled BRIL output in
+                                feedback and see the compiled Bril output in
                                 real-time.
                             </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="why-wats" class="why-wats-section">
+                    <h2 class="section-title reveal">
+                        Designed for Learning Optimizations
+                    </h2>
+                    <div class="why-wats-container">
+                        <div class="why-wats-text reveal">
+                            <h3>Escape the Complexity of LLVM</h3>
+                            <p>
+                                Modern compilers like LLVM are marvels of
+                                engineering, but their IR is often heavily
+                                pre-optimized. This means there's little room
+                                for a student to learn and implement trivial
+                                compiler optimizations from scratch.
+                            </p>
+                            <p>
+                                <b>Wats is different.</b> It compiles to a
+                                clean, unoptimized intermediate representation,
+                                creating the perfect sandbox to power up your
+                                compiler optimization skills.
+                            </p>
+                        </div>
+
+                        <div class="why-wats-code reveal anim-delay-1">
+                            <div class="code-example-block">
+                                <div class="code-label">
+                                    Before Optimization (in Bril)
+                                </div>
+                                <pre><code><span class="code-comment">@main</span> {
+    <span class="code-variable">v1: int</span> = const 5;
+    <span class="code-variable">v2: int</span> = const 10;
+    <span class="code-variable">res: int</span> = add v1 v2;
+}</code></pre>
+                            </div>
+                            <div class="code-example-block">
+                                <div class="code-label">
+                                    After Your Constant Folding Pass
+                                </div>
+                                <pre><code><span class="code-comment">@main</span> {
+    <span class="code-variable">res: int</span> = const 15;
+}</code></pre>
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
 
             <footer>
-                <p>Work on progress!</p>
+                <p>Wats is still a work in progress!</p>
             </footer>
         </div>
 
