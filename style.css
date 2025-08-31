@@ -1,4 +1,3 @@
-/* === GLOBAL STYLES & COLOR THEME === */
 :root {
     --bg-color: #0f172a;
     --card-color: rgba(30, 41, 59, 0.5);
@@ -8,10 +7,6 @@
     --accent-pink: #ec4899;
     --accent-blue: #3b82f6;
     --border-color: rgba(255, 255, 255, 0.1);
-    --font-sans: "Poppins", sans-serif;
-    --font-mono:
-        "Fira Code", "JetBrains Mono", Consolas, Monaco, "Andale Mono",
-        "Ubuntu Mono", monospace;
 }
 
 * {
@@ -21,7 +16,7 @@
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: "Poppins", sans-serif;
     background-color: var(--bg-color);
     color: var(--primary-text);
     overflow-x: hidden;
@@ -119,7 +114,7 @@ nav a:hover {
     color: var(--accent-pink);
 }
 
-/* Hero Section */
+/* === NEW HERO SECTION STYLES === */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -128,13 +123,15 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.2fr; /* Text on left, editor on right */
     align-items: center;
     gap: 4rem;
     width: 100%;
 }
+
 .hero-content {
     text-align: left;
 }
@@ -196,7 +193,7 @@ nav a:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Code Editor (in Hero) */
+/* Code Editor (now in Hero) */
 .code-editor-wrapper {
     background: #1e293b;
     border: 1px solid var(--border-color);
@@ -233,30 +230,44 @@ nav a:hover {
 .editor-title {
     color: var(--secondary-text);
     margin: 0 auto;
-    font-family: var(--font-mono);
+    font-family: "Courier New", Courier, monospace;
 }
 .editor-body {
     flex-grow: 1;
 }
 .editor-body pre {
     padding: 1.5rem;
-    margin: 0;
-    font-family: var(--font-mono);
+    font-family: "Courier New", Courier, monospace;
     font-size: 1.1rem;
     line-height: 1.7;
     height: 100%;
-    /* This is still very important! */
     white-space: pre-wrap;
 }
-
-/* === KEY FIX: Correct Line Number Alignment === */
-#animated-code .code-line-number {
-    display: inline-block; /* Allows us to set width */
-    width: 2.5em; /* Give it a fixed width */
-    text-align: right; /* Align numbers to the right (e.g. 9 vs 10) */
-    padding-right: 1em; /* Space between number and code */
-    color: var(--secondary-text); /* Dim the color */
-    user-select: none; /* Prevent users from selecting line numbers */
+.code-line-number {
+    display: inline-block;
+    width: 2em;
+    text-align: right;
+    margin-right: 1em;
+    color: var(--secondary-text);
+    user-select: none;
+}
+.code-keyword {
+    color: #569cd6;
+}
+.code-function {
+    color: #dcdcaa;
+}
+.code-string {
+    color: #ce9178;
+}
+.code-number {
+    color: #b5cea8;
+}
+.code-type {
+    color: #4ec9b0;
+}
+.code-comment {
+    color: #6a9955;
 }
 
 /* Typewriter Cursor Styling */
@@ -279,20 +290,20 @@ nav a:hover {
     }
 }
 
-/* ALL OTHER CSS (Features section, Why Wats section, Footer, etc.) REMAINS THE SAME */
-
-/* Features Section */
-.features-section {
-    padding: 6rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+/* Section Styling */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     font-weight: 600;
 }
+.features-section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Features Section */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -322,74 +333,7 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* "Why Wats" Section */
-.why-wats-section {
-    padding: 6rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.why-wats-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-.why-wats-text h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary-text);
-}
-.why-wats-text p {
-    color: var(--secondary-text);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-.why-wats-code {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-.code-example-block {
-    background: #1e293b;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-}
-.code-label {
-    padding: 0.5rem 1rem;
-    background-color: #334155;
-    color: var(--secondary-text);
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-}
-.code-example-block pre {
-    padding: 1.5rem;
-    font-family: var(--font-mono);
-}
-.code-variable {
-    color: #8be9fd;
-}
-.code-comment {
-    color: #6272a4;
-}
-.code-keyword {
-    color: #569cd6;
-}
-.code-function {
-    color: #dcdcaa;
-}
-.code-string {
-    color: #ce9178;
-}
-.code-number {
-    color: #b5cea8;
-}
-.code-type {
-    color: #4ec9b0;
-}
-
-/* Scroll Animations */
+/* Dynamic Scroll Animations */
 .reveal {
     opacity: 0;
     transform: translateY(60px) rotate(3deg);
@@ -417,7 +361,66 @@ footer {
     color: var(--secondary-text);
 }
 
-/* Responsive Design */
+.why-wats-section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.why-wats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.why-wats-text h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-text);
+}
+
+.why-wats-text p {
+    color: var(--secondary-text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.why-wats-code {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.code-example-block {
+    background: #1e293b;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.code-label {
+    padding: 0.5rem 1rem;
+    background-color: #334155;
+    color: var(--secondary-text);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.code-example-block pre {
+    padding: 1.5rem;
+    font-family: var(--font-mono);
+}
+
+/* Add some syntax highlighting colors for the new example */
+.code-variable {
+    color: #8be9fd;
+}
+.code-comment {
+    color: #6272a4;
+}
+
 @media (max-width: 950px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -430,10 +433,12 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+
     .why-wats-container {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     nav ul {
         display: none;
